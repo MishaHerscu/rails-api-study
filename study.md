@@ -31,7 +31,9 @@ In your own words, define what the responsibilities of the model layer are in
 Rails.
 
 ```md
-<!-- your answer here -->
+The model is where you have the data from the database in client-side classes.
+You also try to have as much of the logic in the model as you can. It is
+easier to debug than the controller.
 ```
 
 ## Define Controller Responsiblities
@@ -40,7 +42,8 @@ In your own words, define what the responsibilities of the controller layer are
 in Rails.
 
 ```md
-<!-- your answer here -->
+The controller sits in the middle of everything and passes requests and data
+around. In particular, the requests let you do CRUD operations.
 ```
 
 ## Define Router Responsiblities
@@ -48,7 +51,8 @@ in Rails.
 In your own words, define what the router does in Rails.
 
 ```md
-<!-- your answer here -->
+I think a router connects requests with the proper controllers and actions. It
+can also make the URLs that you need.
 ```
 
 ## The Request-Response Cycle in Rails
@@ -57,5 +61,11 @@ Starting with a client making a GET request to a particular URL, describe how
 the parts of Rails interact to produce and send a response.
 
 ```md
-<!-- your answer here -->
+1. The client makes the GET request to a URL
+2. The routers sends the request to the matching action in the controller
+3. The router may generate a URL as well
+4. The controller sends a request to the model
+5. The model processes the request and sends results back to the controller
+6. The view then displays the results from the controller
+7. I think the model is not updated from the back end during this process. You would have to refresh it to get up-to-date data.
 ```
